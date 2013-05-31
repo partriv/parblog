@@ -1,0 +1,17 @@
+{% extends "admin/base.html" %}
+
+{% block main_content %}
+	
+	{% for en in entries %}
+	   <div id="adminentries">
+	       <a href="/admin/entry/?eid={{ en.id }}">{{ en.title }}</a><br/>
+	       {% if en.main_image %}<a href="/admin/entry/?eid={{ en.id }}"><img src="/ugc/{{ en.main_image.thumb }}"></a><br/>{% endif %}
+	       <ul>
+	       <li>Slug: {{ en.slug }}</li>
+	       <li>Published: {{ en.published }}</li>
+	       <li>Author: {{ en.author.username }}</li>
+	       </ul>
+	   </div><br/>
+	{% endfor %}	
+	
+{% endblock main_content %}

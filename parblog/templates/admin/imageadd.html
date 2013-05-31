@@ -1,0 +1,19 @@
+{% extends "admin/base.html" %}
+
+{% block main_content %}
+	
+    <b>Add an image</b>
+	<br/><br/>
+	<form method="POST" action="/admin/images/" enctype="multipart/form-data">{% csrf_token %}
+		{{ form }}<br/><br/>
+		<input type="submit" value="Upload"/>
+	</form>
+	<hr/>
+	{% for img in images %}
+	<a href="/ugc/{{ img.full }}"><img src="/ugc/{{ img.thumb }}"/></a>
+	<br/>
+	{{ img.id }} - {{ img.full }}<br/>{{ img.created }}
+	<br/><br/>
+	{% endfor %}
+	
+{% endblock main_content %}

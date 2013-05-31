@@ -1,0 +1,23 @@
+<html>
+<head>
+		<link rel="shortcut icon" href="/i/favicon.png" />
+		
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script> 		
+		
+		
+		<script type="text/javascript" src="/j/adminscripts.js"></script>
+		
+		<link rel="stylesheet" href="/c/shared.css" type="text/css" />
+		<link rel="stylesheet" href="/c/admin.css" type="text/css" />
+		
+		<title>Admin - DCH</title>
+</head>
+<body>
+	 <a href="/admin/">Home</a> | <a href="/admin/entry/">New Entry</a> |  <a href="/admin/images/">Images</a> | <a href="/">Blog</a> {% if user %} | <a href="/logout/">Logout {{ user.username }}</a> {% endif %} 
+	 <hr/>
+	{% block main_content %}
+	{% endblock main_content %}
+	<hr/>
+	
+	</body>
+</html>
